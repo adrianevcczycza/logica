@@ -1,0 +1,187 @@
+CONTEXTUALIZAÇÃO
+Uma empresa de manutenção industrial presta serviços para diversas fábricas da região. Todos os dias são
+abertas Ordens de Serviço (OS) para manutenção de equipamentos como computadores industriais, impressoras
+de etiquetas e leitores de código de barras.
+O sistema atual é totalmente manual, dificultando o controle das ordens de serviço e a geração de informações para
+os técnicos.
+Sua equipe foi contratada para desenvolver um sistema em Java capaz de realizar o cadastro e o gerenciamento
+das Ordens de Serviço.
+O sistema deverá utilizar Programação Orientada a Objetos para organizar os dados e facilitar futuras manutenções.
+DESAFIO
+Sua equipe foi contratada por uma empresa de manutenção industrial para desenvolver um sistema que permita
+cadastrar, gerenciar e acompanhar Ordens de Serviço (OS) relacionadas à manutenção de equipamentos industri-
+ais.
+O sistema deverá atender às necessidades do cliente, possibilitando o registro das ordens, o acompanhamento do
+andamento dos serviços, a consulta das informações cadastradas e a emissão de relatórios que apoiem a gestão
+das atividades de manutenção.
+Para desenvolver a solução, analise as necessidades apresentadas pelo cliente, proponha uma estrutura de software
+adequada e implemente um sistema em Java que atenda aos requisitos funcionais e técnicos especificados no
+Anexo I – Especificação Técnica do Sistema. Ao final, o sistema deverá estar funcional, organizado conforme os
+princípios da Programação Orientada a Objetos e permitir que o cliente realize o gerenciamento das Ordens de
+Serviço de forma mais eficiente e confiável.
+RESULTADOS E ENTREGAS
+Ao final da atividade, o estudante deverá entregar:
+Projeto desenvolvido em Java, totalmente funcional, conforme os requisitos técnicos especificados.
+Código-fonte organizado, estruturado utilizando os conceitos de Programação Orientada a Objetos (interface, classe
+abstrata, herança, encapsulamento e sobrescrita de métodos).
+Sistema com todas as funcionalidades implementadas e em funcionamento.
+Arquivo compactado (.zip) contendo todos os arquivos do projeto necessários para compilação e execução.
+Para validação do processo de desenvolvimento, deverão ser observadas as seguintes orientações:
+Instalar a extensão Local History (publicada por xyz) no seu VS Code.
+Manter habilitada a opção Salvamento Automático (Auto Save) do VS Code durante o desenvolvimento da atividade.
+O arquivo .zip entregue deverá conter obrigatoriamente a pasta .history, gerada automaticamente pela extensão
+Local History.
+Atenção: Caso não siga estas instruções ou entregue o arquivo .zip sem a pasta .history, será considerado entrega
+fora do padrão exigido, acarretando em nota zero.
+LISTA DE ANEXOS
+Interface
+Crie uma interface denominada Gerenciavel, contendo os seguintes métodos:
+concluirServico()
+reabrirServico()
+Classe Abstrata
+Crie uma classe abstrata denominada Servico, que implemente a interface Gerenciavel
+A classe deverá possuir os seguintes atributos privados:
+numeroOS
+setor
+tecnico
+prioridade
+concluida
+A classe deverá conter:
+Construtor.
+Métodos getters e setters.
+Implementação dos métodos da interface Gerenciavel.
+Método abstrato exibirDados().
+Classe OrdemServico
+Crie uma classe denominada OrdemServico, que herde da classe Servico.
+A classe deverá possuir os seguintes atributos privados:
+equipamento
+horasPrevistas
+Além disso, deverá conter:
+Construtor.
+Métodos getters e setters.
+Implementação do método exibirDados().
+Regras de Negócio
+O sistema deverá respeitar as seguintes regras:
+O número da Ordem de Serviço não poderá ser vazio.
+O nome do equipamento deverá possuir, no mínimo, cinco caracteres.
+O setor não poderá ser vazio.
+O nome do técnico não poderá ser vazio.
+A prioridade deverá aceitar apenas os seguintes valores:
+Baixa
+Média
+Alta
+As horas previstas deverão ser maiores que zero.
+Toda nova Ordem de Serviço deverá iniciar com o status não concluída.
+Caso algum valor informado seja inválido, o atributo correspondente não deverá ser alterado.
+Parte 1 – Implementação das Classes
+Implemente todas as classes solicitadas respeitando os requisitos apresentados.
+É obrigatório utilizar:
+Interface.
+Classe abstrata.
+Herança.
+Encapsulamento.
+Construtores.
+Sobrescrita do método exibirDados().
+Parte 2 – Cadastro das Ordens de Serviço
+Na classe Principal, desenvolva o cadastro das Ordens de Serviço.
+O sistema deverá:
+Solicitar ao usuário a quantidade de Ordens de Serviço que serão cadastradas.
+Criar um vetor de objetos com a quantidade informada.
+Realizar o cadastro utilizando obrigatoriamente o construtor da classe OrdemServico.
+Armazenar todos os objetos no vetor.
+Parte 3 – Menu do Sistema
+Após o cadastro, o sistema deverá apresentar continuamente o seguinte menu:
+1 - Listar Ordens de Serviço
+2 - Buscar Ordem de Serviço
+3 - Concluir Ordem de Serviço
+4 - Reabrir Ordem de Serviço
+5 - Listar Ordens Concluídas
+6 - Listar Ordens Pendentes
+7 - Exibir Relatório
+8 - Encerrar Sistema
+O menu deverá permanecer em execução até que seja escolhida a opção 8.
+Parte 4 – Funcionalidades
+Listar Ordens de Serviço
+Exiba todas as Ordens de Serviço cadastradas utilizando o método exibirDados().
+Buscar Ordem de Serviço
+Solicite o número da Ordem de Serviço.
+Caso seja encontrada:
+Exiba todas as informações cadastradas.
+Caso contrário:
+Informe que a Ordem de Serviço não foi localizada.
+Concluir Ordem de Serviço
+Solicite o número da Ordem de Serviço.
+Caso seja encontrada:
+Altere seu status para concluída.
+Caso contrário:
+Informe que a Ordem de Serviço não foi localizada.
+Reabrir Ordem de Serviço
+Solicite o número da Ordem de Serviço.
+Caso seja encontrada:
+Altere seu status para não concluída.
+Caso contrário:
+Informe que a Ordem de Serviço não foi localizada.
+Listar Ordens Concluídas
+Exiba apenas as Ordens de Serviço cujo status seja concluída.
+Listar Ordens Pendentes
+Exiba apenas as Ordens de Serviço cujo status seja não concluída.
+Parte 5 – Relatório
+O relatório deverá apresentar:
+Quantidade total de Ordens de Serviço cadastradas.
+Quantidade de Ordens concluídas.
+Quantidade de Ordens pendentes.
+Percentual de Ordens concluídas.
+Percentual de Ordens pendentes.
+Quantidade de Ordens por prioridade:
+Baixa
+Média
+Alta
+Quantidade total de horas previstas.
+Média de horas previstas.
+Ordem de Serviço com a maior quantidade de horas previstas.
+Ordem de Serviço com a menor quantidade de horas previstas.
+LISTA DE VERIFICAÇÃO
+Exame / Turma T TTIN 2026/1 INT1 (MI82)
+CRITÉRIOS DE AVALIAÇÃO CAP Desenv> (Nota) JUSTIFICATIVA
+O algoritmo desenvolvido atende corretamente aos
+requisitos propostos para o sistema?
+C1
+A solução implementada apresenta uma sequên-
+cia lógica e organizada de execução?
+C1
+Os métodos implementados resolvem correta-
+mente os problemas propostos pelo sistema?
+C1
+As estruturas de decisão e repetição foram uti-
+lizadas corretamente para atender às funcionali-
+dades do sistema?
+C2
+As variáveis, constantes e operadores foram de-
+clarados e utilizados de forma adequada durante o
+desenvolvimento?
+C2
+O vetor de objetos foi utilizado corretamente para
+armazenar e manipular as Ordens de Serviço?
+C2
+A solução implementa corretamente os conceitos
+de encapsulamento, herança e construtores con-
+forme solicitado?
+C3
+A interface, a classe abstrata e a sobrescrita de
+métodos foram utilizadas corretamente na imple-
+mentação do sistema?
+C3
+Os objetos foram criados e manipulados correta-
+mente, respeitando os princípios da Programação
+Orientada a Objetos?
+C3
+O sistema utiliza blocos try-catch para tratar pos-
+síveis erros durante a execução?
+C4
+As exceções tratadas impedem o encerramento
+inesperado da aplicação e apresentam mensagens
+adequadas ao usuário?
+C4
+O tratamento de exceções foi implementado cor-
+retamente para as situações previstas no sistema
+(como entradas inválidas ou erros de conversão)?
